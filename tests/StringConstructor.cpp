@@ -22,6 +22,7 @@ TEST(StringConstructor, default)
     mocks::GeneratorRegistry registry;
     EXPECT_CALL(registry, getGenerator(_)).
         Times(0);
+
     StringConstructor sc("", registry);
 }
 
@@ -30,6 +31,7 @@ TEST(StringConstructor, template_1)
     mocks::GeneratorRegistry registry;
     EXPECT_CALL(registry, getGenerator(StringView("ABC")));
     EXPECT_CALL(registry, getGenerator(StringView("DEF")));
+
     StringConstructor sc("${ABC}${DEF}", registry);
 }
 
@@ -38,6 +40,7 @@ TEST(StringConstructor, template_2)
     mocks::GeneratorRegistry registry;
     EXPECT_CALL(registry, getGenerator(StringView("ABC")));
     EXPECT_CALL(registry, getGenerator(StringView("DEF")));
+
     StringConstructor sc("...${ABC}...${DEF}...", registry);
 }
 
@@ -46,14 +49,16 @@ TEST(StringConstructor, template_3)
     mocks::GeneratorRegistry registry;
     EXPECT_CALL(registry, getGenerator(_)).
         Times(0);
+
     StringConstructor sc("...", registry);
 }
 
-TEST(StringConstructor, invalid_template)
+TEST(StringConstructor, not_template)
 {
     mocks::GeneratorRegistry registry;
     EXPECT_CALL(registry, getGenerator(_)).
         Times(0);
+
     StringConstructor sc("${ABC", registry);
 }
 
