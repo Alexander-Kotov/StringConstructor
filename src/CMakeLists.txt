@@ -3,7 +3,8 @@ project(StringConstructor C CXX)
 set(SOURCES
     StringConstructor.cpp
     StringView.cpp
-    TextGenerator.cpp)
+    TextGenerator.cpp
+    GeneratorRegistry.cpp)
 set(HEADERS
     StringConstructor.h
     IGeneratorRegistry.h

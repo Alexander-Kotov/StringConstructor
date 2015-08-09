@@ -1,6 +1,7 @@
 #ifndef IGENERATORREGISTRY_H
 #define IGENERATORREGISTRY_H
 
+#include <memory>
 #include "IGenerator.h"
 #include "StringView.h"
 

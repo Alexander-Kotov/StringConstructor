@@ -1,21 +1,8 @@
 #include <gmock/gmock.h>
 #include "StringConstructor.h"
+#include "Mocks.h"
 
 using namespace testing;
-
-namespace mocks {
-
-class Generator : public IGenerator {
-public:
-    MOCK_METHOD1(generateTo, void (std::ostream &));
-};
-
-class GeneratorRegistry : public IGeneratorRegistry {
-public:
-    MOCK_METHOD1(getGenerator, std::shared_ptr<IGenerator> (const StringView &));
-};
-
-}
 
 TEST(StringConstructor, default)
 {

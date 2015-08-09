@@ -5,7 +5,8 @@ find_package(GMock REQUIRED)
 
 set(SOURCES
     StringConstructor.cpp
-    StringView.cpp)
+    StringView.cpp
+    GeneratorRegistry.cpp)
 
 add_executable(${PROJECT_NAME}
     ${SOURCES})
