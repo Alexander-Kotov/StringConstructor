@@ -9,7 +9,9 @@ set(HEADERS
     StringConstructor.h
     IGeneratorRegistry.h
     IGenerator.h
-    StringView.h)
+    StringView.h
+    GeneratorRegistry.h
+    TextGenerator.h)
 
 add_library(${PROJECT_NAME}
     STATIC
